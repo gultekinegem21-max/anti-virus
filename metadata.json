@@ -1,0 +1,6 @@
+{
+  "name": "Aegis Anti-Threat",
+  "description": "A web-based security and antivirus dashboard simulation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

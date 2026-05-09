@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+body { 
+  background-color: #0f172a; 
+  margin: 0; 
+  padding: 0; 
+  overflow: hidden; 
+  font-family: 'Inter', -apple-system, sans-serif; 
+} 
+
+.geometric-bg { 
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+} 
+
+.status-ring { 
+  width: 320px; 
+  height: 320px; 
+  border-radius: 50%; 
+  border: 8px solid #10b981; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%); 
+  position: relative; 
+  transition: all 0.3s ease;
+} 
+
+.status-ring.scanning {
+  border-color: #3b82f6;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%); 
+}
+
+.status-ring::after { 
+  content: ''; 
+  position: absolute; 
+  inset: -15px; 
+  border-radius: 50%; 
+  border: 1px solid rgba(16, 185, 129, 0.3); 
+  transition: all 0.3s ease;
+} 
+
+.status-ring.scanning::after {
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.5; }
+  100% { transform: scale(0.95); opacity: 1; }
+}
+
+.nav-item { 
+  transition: all 0.2s ease; 
+  border-left: 3px solid transparent; 
+} 
+
+.nav-item.active { 
+  background: rgba(59, 130, 246, 0.1); 
+  border-left-color: #3b82f6; 
+  color: #fff; 
+} 
+
+.card { 
+  background: rgba(30, 41, 59, 0.7); 
+  border: 1px solid rgba(255, 255, 255, 0.05); 
+} 
+
+.metric-border { 
+  border-right: 1px solid rgba(255, 255, 255, 0.1); 
+}
